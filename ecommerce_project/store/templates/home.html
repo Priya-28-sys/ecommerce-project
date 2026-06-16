@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Store</title>
+    {% load static %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<h1>My E-Commerce Store</h1>
+
+<div>
+    {% for product in products %}
+        <div>
+            <img src="{{ product.image }}" width="200">
+            <h2>{{ product.name }}</h2>
+            <p>₹{{ product.price }}</p>
+
+            <a href="/product/{{ product.id }}/">
+                View Details
+            </a>
+            <a href="/checkout/">
+    <button>Checkout</button>
+</a>
+        </div>
+    {% endfor %}
+</div>
+
+</body>
+</html>
